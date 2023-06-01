@@ -41,3 +41,16 @@ const mobileNavbar = new MobileNavbar(
     ".nav-list li",
 );
 mobileNavbar.init();
+
+
+ScrollReveal({ 
+    reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+}); 
+
+ScrollReveal().reveal('.sobre-left, .sobre-icon, .sobre-btn, .footer', {origin: 'bottom' });
+ScrollReveal().reveal('', { origin: 'top' });
+ScrollReveal().reveal('.home-left, .projeto-1, .projeto-3', { origin: 'left' });
+ScrollReveal().reveal('.home-right, .sobre-text, .projeto-2, .projeto-4', { origin: 'right' });
