@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00d2df;
+  --dark-10: #121212;
+  --dark-20: #151515;
+  --dark-30: #c4c4c4;
+  --dark-40: #fff;
+  --primary-linear-gradient: (to right, #10d7e2, #9358f7);
+  --second-linear-gradient: linear-gradient(
+    132.33deg,
+    #d24074 -0.67%,
+    #6518b4 102.54%
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-10);
+}
+
+/*header section*/
+
+.logo {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--dark-10);
+  height: 5rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  color: var(--dark-30);
+  letter-spacing: 3px;
+  margin-right: 62px;
+}
+
+.nav-list li a {
+  color: var(--dark-30);
+  font-weight: 400;
+  font-size: 14px;
+  transition: 0.4s;
+}
+
+.nav-list li a:hover {
+  color: var(--primary-color);
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: var(--dark-40);
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: var(--dark-10);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/*header section*/
+
+/*home section*/
+.home-content .home-left {
+  position: relative;
+  top: 17rem;
+  left: 12rem;
+  max-width: 80%;
+}
+
+.home-content .home-right {
+  position: absolute;
+  right: 0;
+  top: 6rem;
+}
+
+.home-left p {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--dark-40);
+  margin-bottom: 60px;
+}
+
+.home-left span {
+  color: var(--primary-color);
+  font-size: 50px;
+  letter-spacing: -3px;
+}
+
+.home-left .home-btn {
+  display: flex;
+  gap: 2rem;
+}
+
+.home-btn .btn-linkedin button,
+.home-btn .github-btn button {
+  border: 2px solid var(--primary-color);
+  padding: 10px 50px;
+  background-color: transparent;
+  color: var(--dark-40);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.home-btn .btn-linkedin button:hover,
+.home-btn .github-btn button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-10);
+  -webkit-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  -moz-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+}
+
+/*home section*/
+
+/*sobre-mim section*/
+
+.sobre-mim {
+  margin-top: 30rem;
+  background-color: var(--dark-20);
+}
+
+.sobre-left .img {
+  width: 367px;
+  height: 367px;
+  background: url(../img/jgn.jpg);
+  background-size: cover;
+  border-left: 6px solid var(--primary-color);
+}
+
+.sobre-mim .container {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.sobre-text {
+  max-width: 530px;
+}
+
+.sobre-text h1 {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--dark-40);
+  margin-bottom: 40px;
+}
+
+.sobre-text h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--dark-40);
+  margin-bottom: 21px;
+}
+
+.sobre-text p {
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--dark-30);
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.sobre-icon {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.sobre-btn {
+  display: flex;
+  gap: 30px;
+}
+
+.sobre-btn button {
+  border: 2px solid var(--primary-color);
+  padding: 10px 50px;
+  background-color: transparent;
+  color: var(--dark-40);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sobre-btn button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-10);
+  -webkit-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  -moz-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+}
+
+/*sobre-mim section*/
+
+/*projetos section*/
+
+.projeto-content .projeto-img {
+  max-width: 530px;
+  width: 530px;
+  height: 200px;
+  background: url(../img/rachi.png);
+  background-size: cover;
+  border-left: 6px solid var(--primary-color);
+  margin-bottom: 40px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.projetos h1 {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--dark-40);
+  margin-bottom: 60px;
+}
+
+.projetos .titulo-projeto {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.projetos p {
+  color: var(--dark-30);
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.projetos span {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.projeto-btn {
+  margin-top: 38px;
+}
+
+.projeto-btn button {
+  border: 2px solid var(--primary-color);
+  padding: 10px 50px;
+  background-color: transparent;
+  color: var(--dark-40);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.projeto-btn button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-10);
+  -webkit-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  -moz-box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+  box-shadow: 1px 3px 10px 0px rgba(0, 210, 223, 1);
+}
+
+.projetos-container {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*projetos section*/
